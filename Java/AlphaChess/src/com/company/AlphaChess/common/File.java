@@ -1,0 +1,6 @@
+package com.company.AlphaChess.common;
+
+public enum  File {
+    A,B,C,D,E,F,G,H
+}
+
