@@ -12,6 +12,18 @@ Theory:
     * Table:
     * Mapper:
 
+-   In this lesson, we performed all of our CRUD operations with SQLAlchemy on an SQLite database. Before we perform any operations, we must first import the necessary libraries, connect to our restaurantMenu.db, and create a session to interface with the database:
+
+    from sqlalchemy import create_engine
+    from sqlalchemy.orm import sessionmaker
+    from database_setup import Base, Restaurant, MenuItem
+
+    engine = create_engine('sqlite:///restaurantMenu.db')
+    Base.metadata.bind=engine
+    DBSession = sessionmaker(bind = engine)
+    session = DBSession()
+
+
 - CRUD Create
     * engine = create_engine() lets sqlAlchemy know which .db we are communicating with.
 
@@ -45,3 +57,26 @@ Theory:
 
     * Reading from database
         firstResult = session.query(Restaurant).first()
+
+    * Updaing a existing
+        • Find entry : filter_by
+        • Reset Values
+        • Add to session
+        • session.commit()
+
+        rebecca = session.query(Employee).filter_by(name = "Rebecca Allen").one()
+        RebeccaAddress = session.query(Address).filter_by(employee_id = rebecca.id).one()
+        RebeccasAddress.street = "120 Loran Circle"
+        RebeccasAddress.zip = "22309"
+        session.add(RebeccasAddress)
+        session.commit()
+    
+    * Deleting 
+        • Find entry
+        • session.delete(entry)
+        • session.commit()
+
+        spinach = session.query(MenuItem).filter_by(name = 'Spinach Ice Cream').one()
+        print(spinach.restaurant.name) -> Auntie Ann's Diner
+        session.delete(spinach) 
+        session.commit() # To persist the change
