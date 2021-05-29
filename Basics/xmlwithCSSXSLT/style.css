@@ -1,0 +1,29 @@
+catalog, banner {
+    color: #FFFFFF;
+    background-color: #360036;
+    width: 100%;
+}
+
+heading {
+    color: #3286c1;
+    background-color: #0fcee0;
+    font-size: 40px;
+    font-weight: bold;
+    display: center;
+}
+
+banner {
+    color: #C5B2EC;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+heading, title, record, year {
+    font-family:sans-serif,Arial;
+    display: block;
+}
+
+title {
+    font-size: 18px;
+    font-weight: bold;
+}

@@ -3,6 +3,11 @@ Where they would be able to CRUD
 
 
 Theory:
+
+Module 02: Full Stack Foundations
+
+Lesson 01: Working with CRUD
+
 - Creating Database with SQLAlchemy
     * Configuration(To import all needed modules):
     * Class(rep data):
@@ -80,3 +85,10 @@ Theory:
         print(spinach.restaurant.name) -> Auntie Ann's Diner
         session.delete(spinach) 
         session.commit() # To persist the change
+
+
+Lesson 02: Making a Web Server
+
+- Protocols: For clients and server to commnunicate in the same language
+    TCP,IP,HTTP
+
